@@ -8,7 +8,7 @@
 
     .login-container {
         width           : 350px;
-        height          : 450px;
+        height          : auto;
         border-radius   : 10px;
         background-color: #fff;
 
@@ -17,13 +17,24 @@
 
             .text-login {
                 text-align : center;
-                font-size  : 24px;
+                font-size  : 26px;
                 font-weight: 600;
                 padding    : 12px;
             }
 
             .login-input {
                 margin-bottom: 14px;
+
+                .custom-input-password {
+                    position: relative;
+
+                    i {
+                        position: absolute;
+                        top     : 10px;
+                        right   : 8px;
+                        cursor  : pointer;
+                    }
+                }
             }
 
             .btn-login-wrapper {
@@ -66,7 +77,7 @@
                     justify-content : center;
                     align-items     : center;
                     color           : #fff;
-                    margin          : 0 6px
+                    margin          : 0 6px 12px;
                 }
 
                 .social-icon-facebook {
