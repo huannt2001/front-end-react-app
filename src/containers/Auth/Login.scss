@@ -1,0 +1,78 @@
+.login-background {
+    height         : 100vh;
+    // background: rgb(34, 193, 195);
+    background     : linear-gradient(135deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+
+    .login-container {
+        width           : 350px;
+        height          : 450px;
+        border-radius   : 10px;
+        background-color: #fff;
+
+        .login-content {
+            padding: 16px;
+
+            .text-login {
+                text-align : center;
+                font-size  : 24px;
+                font-weight: 600;
+                padding    : 12px;
+            }
+
+            .login-input {
+                margin-bottom: 14px;
+            }
+
+            .btn-login-wrapper {
+
+                .btn-login {
+                    border       : none;
+                    color        : #fff;
+                    width        : 100%;
+                    border-radius: 22px;
+                    font-weight  : 600;
+                    font-size    : 20px;
+                    padding      : 6px;
+                    margin       : 12px 0;
+                    background   : linear-gradient(135deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+                }
+            }
+
+            .forgot-password {
+                font-size: 12px;
+            }
+
+            .login-other {
+                text-align: center;
+                margin    : 12px 0;
+                font-size : 24px;
+            }
+
+            .socials-login {
+                display        : flex;
+                justify-content: center;
+
+                .social-icon-google,
+                .social-icon-facebook {
+                    font-size       : 30px;
+                    border-radius   : 50%;
+                    background-color: #c32424;
+                    width           : 50px;
+                    height          : 50px;
+                    display         : flex;
+                    justify-content : center;
+                    align-items     : center;
+                    color           : #fff;
+                    margin          : 0 6px
+                }
+
+                .social-icon-facebook {
+                    background-color: #307aaf;
+                }
+            }
+        }
+    }
+}
