@@ -3,12 +3,14 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import './UserManage.scss';
 import { getAllUsers } from '../../services/userService';
+import ModalUser from './ModalUser';
 class UserManage extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            arrUsers: []
+            arrUsers: [],
+            isOpenModalUser: false
         }
     }
 
@@ -19,7 +21,18 @@ class UserManage extends Component {
                 arrUsers: response.users
             })
         }
-        console.log('>>> get user from node.js ', response);
+    }
+
+    handleAddNewUser = () => {
+        this.setState({
+            isOpenModalUser: true
+        })
+    }
+
+    toggleUserModal = () => {
+        this.setState({
+            isOpenModalUser: !this.state.isOpenModalUser
+        })
     }
 
     /** lifecycles
@@ -28,13 +41,23 @@ class UserManage extends Component {
      * 2. Did mound (set state)
      * 3. Render
      */
-
-
     render() {
         let arrUsers = this.state.arrUsers;
         return (
             <div className="users-container">
+                <ModalUser
+                    isOpen={this.state.isOpenModalUser}
+                    toggleFromParent={this.toggleUserModal}
+                />
                 <div className="title text-center">Manage user with react</div>
+                <div className="mx-1">
+                    <button className="btn btn-primary px-2"
+                        onClick={() => this.handleAddNewUser()}>
+                        <i className="fas fa-plus px-1"></i>
+                        Add new user
+                    </button>
+                </div>
+
                 <div className="users-table mt-3">
                     <table id="customers">
                         <thead>
