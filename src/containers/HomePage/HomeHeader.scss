@@ -47,6 +47,8 @@
 
             .list-options-item {
                 margin: 0 20px;
+                cursor: pointer;
+
 
                 .sub-header {
                     font-size      : 12px;
@@ -72,6 +74,7 @@
 
             .header-support {
                 text-decoration: none;
+                cursor         : pointer;
 
                 .support-icon {
                     color    : #45c3d2;
@@ -84,9 +87,22 @@
                 }
             }
 
-            .flag {
+            .language-vi {
                 margin-left: 24px;
                 color      : #969495;
+
+                &.active {
+                    color: #45c3d2;
+                }
+            }
+
+            .language-en {
+                margin-left: 24px;
+                color      : #969495;
+
+                &.active {
+                    color: #45c3d2;
+                }
             }
         }
     }
@@ -153,14 +169,19 @@
 
             .option-list {
                 display        : flex;
-                align-items    : center;
                 justify-content: space-evenly;
+                flex-wrap      : wrap;
                 padding-left   : 0;
                 list-style     : none;
 
 
                 .option-item {
                     max-width: 112px;
+                    cursor   : pointer;
+
+                    &:hover .option-title {
+                        color: #45c3d2;
+                    }
 
                     .option-item-link {
                         text-decoration: none;
