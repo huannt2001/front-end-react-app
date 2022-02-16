@@ -1,0 +1,190 @@
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+.slick-prev {
+    left   : -10px !important;
+    z-index: 1;
+    width  : 44px !important;
+    height : 48px !important;
+
+}
+
+.slick-next {
+    right  : -10px !important;
+    z-index: 1 !important;
+    width  : 44px !important;
+    height : 48px !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    // content    : "\e257" !important;
+    font-family: FontAwesome !important;
+    font-style : normal;
+    font-weight: 400;
+    background : #fff;
+    border     : 2px solid #d7d7d7;
+    padding    : 10px;
+    text-align : center;
+    color      : #959595 !important;
+}
+
+.section {
+    padding: 30px 90px;
+    border : 3px solid #efeef5;
+
+
+    .section-container {
+        width: 100%;
+
+        .section-header {
+            display        : flex;
+            align-items    : center;
+            justify-content: space-between;
+
+            .section-header-title {
+                font-size: 24px;
+                color    : #000;
+                padding  : 15px 5px;
+
+            }
+
+            .section-header-more {
+                text-transform  : uppercase;
+                outline         : none;
+                color           : #282e41;
+                background-color: #ebebeb;
+                border          : none;
+                font-size       : 11px;
+                padding         : 10px 16px;
+                margin          : 0 5px 30px 0;
+
+                &:hover {
+                    background-color: #f7d800;
+                }
+            }
+        }
+
+    }
+}
+
+.section {
+    &.section-specialty {
+        background-color: #f5f5f5;
+    }
+
+    &.section-medical-facility {
+        background-color: #fff;
+    }
+
+    &.section-outstanding-doctor {
+        background-color: #f5f5f5;
+
+    }
+
+    &.section-hand-book {
+        background-color: #fff;
+    }
+
+    &.section-about {
+        background-color: #f5f5f5;
+
+        .section-about-title {
+            font-size    : 24px;
+            font-weight  : 600;
+            margin-bottom: 16px;
+        }
+
+        .section-about-content {
+            display: flex;
+
+            .section-about-content-video {
+                flex  : 0 0 60%;
+                height: auto;
+            }
+
+            .section-about-content-desc {
+                flex       : 0 0 40%;
+                text-align : justify;
+                font-style : italic;
+                margin-left: 24px;
+            }
+        }
+    }
+
+    &.section-footer {
+        padding: 12px 0 0;
+    }
+
+    .section-body {
+
+        .customize-border {
+            padding: 0 5px;
+
+
+            .section-body-item {
+
+                &:hover .section-body-title {
+                    color: #45c3d2;
+                }
+
+                .section-item-img {
+                    background-repeat  : no-repeat;
+                    background-position: top center;
+                    background-size    : cover;
+                    padding-top        : 56.25%;
+
+                    &.section-specialty {
+                        background-image: url('../../assets/co-xuong-khop.jpg');
+                    }
+
+                    &.section-medical-facility {
+                        background-image: url('../../assets/medical-facility/benh-vien-thu-cuc-1.jpg');
+                    }
+
+                    &.section-outstanding-doctor {
+                        background-image: url('../../assets/outstanding-doctor/AFhanoi.jpg');
+                        padding-top     : 0;
+                        width           : 120px;
+                        height          : 120px;
+                        border-radius   : 50%;
+                        margin          : 0 auto;
+                    }
+
+                    &.section-hand-book {
+                        background-image: url('../../assets/hand-book/cac-phuong-phap-cat-bao-quy-dau.jpg');
+                    }
+
+                }
+
+
+                .section-body-title {
+                    color     : #111111;
+                    font-size : 13px;
+                    margin    : 10px 0 5px;
+                    transition: 0.25s;
+                }
+
+                .doctor-specialty {
+                    color    : #555555;
+                    font-size: 12px;
+
+                }
+            }
+        }
+
+    }
+
+}
+
+.section {
+    &.section-outstanding-doctor {
+        .section-body-item {
+            border : 1px solid #ccc;
+            padding: 10px 0;
+        }
+    }
+}
