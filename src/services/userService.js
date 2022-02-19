@@ -9,11 +9,11 @@ const getAllUsers = (inputId) => {
 }
 
 const createNewUserService = (data) => {
-    return axios.post('api/create-new-user', data)
+    return axios.post('/api/create-new-user', data)
 }
 
 const deleteUserService = (userId) => {
-    return axios.delete('api/delete-user', {
+    return axios.delete('/api/delete-user', {
         data: {
             id: userId
         }
@@ -21,7 +21,11 @@ const deleteUserService = (userId) => {
 }
 
 const editUserService = (inputData) => {
-    return axios.put('api/edit-user', inputData);
+    return axios.put('/api/edit-user', inputData);
+}
+
+const getAllCodeService = (inputType) => {
+    return axios.get(`/api/allcode?type=${inputType}`)
 }
 
 export {
@@ -29,5 +33,6 @@ export {
     getAllUsers,
     createNewUserService,
     deleteUserService,
-    editUserService
+    editUserService,
+    getAllCodeService
 }
