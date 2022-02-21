@@ -8,6 +8,7 @@ const initContentOfConfirmModal = {
 }
 
 const initialState = {
+    isLoadingGender: false,
     genders: [],
     roles: [],
     positions: []
@@ -15,23 +16,61 @@ const initialState = {
 
 const adminReducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.FETCH_GENDER_START:
-            console.log('fire fetch gender start', action)
-            return {
-                ...state,
-            }
-        case actionTypes.FETCH_GENDER_SUCCESS:
+        case actionTypes.FETCH_GENDER_START: {
             let copyState = { ...state };
-            copyState.genders = action.data
-            console.log('fire fetch gender sucess', copyState)
+            copyState.isLoadingGender = true;
             return {
                 ...copyState,
             }
-        case actionTypes.FETCH_GENDER_FAILED:
-            console.log('fire fetch gender error', action)
+        }
+        case actionTypes.FETCH_GENDER_SUCCESS: {
+            let copyState = { ...state };
+            copyState.genders = action.data;
+            copyState.isLoadingGender = false;
             return {
-                ...state,
+                ...copyState,
             }
+        }
+        case actionTypes.FETCH_GENDER_FAILED: {
+            let copyState = { ...state };
+            copyState.genders = [];
+            copyState.isLoadingGender = false;
+            return {
+                ...copyState,
+            }
+        }
+        case actionTypes.FETCH_POSITION_SUCCESS: {
+            let copyState = { ...state };
+            copyState.positions = action.data;
+            copyState.isLoadingGender = false;
+            return {
+                ...copyState,
+            }
+        }
+        case actionTypes.FETCH_POSITION_FAILED: {
+            let copyState = { ...state };
+            copyState.positions = [];
+            copyState.isLoadingGender = false;
+            return {
+                ...copyState,
+            }
+        }
+        case actionTypes.FETCH_ROLE_SUCCESS: {
+            let copyState = { ...state };
+            copyState.roles = action.data;
+            copyState.isLoadingGender = false;
+            return {
+                ...copyState,
+            }
+        }
+        case actionTypes.FETCH_ROLE_FAILED: {
+            let copyState = { ...state };
+            copyState.roles = [];
+            copyState.isLoadingGender = false;
+            return {
+                ...copyState,
+            }
+        }
         default:
             return state;
     }
