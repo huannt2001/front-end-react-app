@@ -6,6 +6,7 @@ import * as actions from "../../../store/actions";
 import './UserRedux.scss';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
+import TableManageUser from "./TableManageUser";
 
 class UserRedux extends Component {
     constructor(props) {
@@ -74,6 +75,21 @@ class UserRedux extends Component {
             this.setState({
                 positionArr: arrPositions,
                 position: arrPositions && arrPositions.length > 0 ? arrPositions[0].key : ''
+            })
+        }
+
+        if (prevProps.listUsers !== this.props.listUsers) {
+            this.setState({
+                email: '',
+                password: '',
+                firstName: '',
+                lastName: '',
+                phoneNumber: '',
+                address: '',
+                gender: '',
+                position: '',
+                role: '',
+                avatar: '',
             })
         }
     }
@@ -270,9 +286,14 @@ class UserRedux extends Component {
                                     <FormattedMessage id="manage-user.save" />
                                 </button>
                             </div>
+                            <div className="col-12 mb-5">
+                                <TableManageUser />
+                            </div>
                         </div>
 
                     </div>
+
+
                     {this.state.isOpen === true &&
                         <Lightbox
                             mainSrc={this.state.previewImgURL}
@@ -295,7 +316,8 @@ const mapStateToProps = state => {
         isLoadingGender: state.admin.isLoadingGender,
         genderRedux: state.admin.genders,
         positionRedux: state.admin.positions,
-        roleRedux: state.admin.roles
+        roleRedux: state.admin.roles,
+        listUsers: state.admin.users
     };
 };
 
@@ -305,7 +327,7 @@ const mapDispatchToProps = dispatch => {
         getPositionStart: () => dispatch(actions.fetchPositionStart()),
         getRoleStart: () => dispatch(actions.fetchRoleStart()),
         createNewUser: (data) => dispatch(actions.createNewUser(data)),
-
+        fetchUserRedux: () => dispatch(actions.fetchAllUsersStart())
 
         // processLogout: () => dispatch(actions.processLogout()),
         // changeLanguageAppRedux: (language) => dispatch(actions.changeLanguageApp(language))
