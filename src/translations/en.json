@@ -52,5 +52,9 @@
         "image": "Image",
         "save": "Save user",
         "edit": "Edit"
+    },
+    "homepage": {
+        "outstanding-doctor": "Last week's fetured doctor",
+        "more-info": "More Infomation"
     }
 }

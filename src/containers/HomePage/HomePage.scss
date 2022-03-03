@@ -9,7 +9,10 @@
     z-index: 1;
     width  : 44px !important;
     height : 48px !important;
+}
 
+.slick-disabled {
+    display: none !important;
 }
 
 .slick-next {
