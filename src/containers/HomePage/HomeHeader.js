@@ -76,109 +76,111 @@ class HomeHeader extends Component {
                     </div>
                 </div>
 
-                <div className="home-header-banner">
-                    <div className="search">
-                        <div className="search-container">
-                            <h1 className="search-title">
-                                <FormattedMessage id="banner.title1" />
-                                <br />
-                                <b><FormattedMessage id="banner.title2" /></b>
-                            </h1>
-                            <div className="search-input-wrap">
-                                <div className="search-icon">
-                                    <i className="fas fa-search"></i>
+                {this.props.isShowBanner === true &&
+                    <div className="home-header-banner">
+                        <div className="search">
+                            <div className="search-container">
+                                <h1 className="search-title">
+                                    <FormattedMessage id="banner.title1" />
+                                    <br />
+                                    <b><FormattedMessage id="banner.title2" /></b>
+                                </h1>
+                                <div className="search-input-wrap">
+                                    <div className="search-icon">
+                                        <i className="fas fa-search"></i>
+                                    </div>
+                                    <input type="text" className="search-input" placeholder="Tìm bác sĩ" />
                                 </div>
-                                <input type="text" className="search-input" placeholder="Tìm bác sĩ" />
+                            </div>
+                        </div>
+                        <div className="option">
+                            <div className="option-container">
+                                <ul className="option-list">
+                                    <li className="option-item">
+                                        <a className="option-item-link">
+                                            <div className="option-service">
+                                                <i className=" fas fa-hospital"> </i>
+                                            </div>
+                                            <p className="option-title">
+                                                <FormattedMessage id="banner.check-specialty" />
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li className="option-item">
+                                        <a className="option-item-link">
+                                            <div className="option-service">
+                                                <i className=" fas fa-mobile-alt"> </i>
+                                            </div>
+                                            <p className="option-title">
+                                                <FormattedMessage id="banner.remote-examination" />
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li className="option-item">
+                                        <a className="option-item-link">
+                                            <div className="option-service">
+                                                <i className=" fas fa-procedures"> </i>
+                                            </div>
+                                            <p className="option-title">
+                                                <FormattedMessage id="banner.general-examination" />
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li className="option-item">
+                                        <a className="option-item-link">
+                                            <div className="option-service">
+                                                <i className=" fas fa-flask"> </i>
+                                            </div>
+                                            <p className="option-title">
+                                                <FormattedMessage id="banner.medical-test" />
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li className="option-item">
+                                        <a className="option-item-link">
+                                            <div className="option-service">
+                                                <i className=" fas fa-user-md"> </i>
+                                            </div>
+                                            <p className="option-title">
+                                                <FormattedMessage id="banner.mental-health" />
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li className="option-item">
+                                        <a className="option-item-link">
+                                            <div className="option-service">
+                                                <i className=" fas fa-hospital"> </i>
+                                            </div>
+                                            <p className="option-title">
+                                                <FormattedMessage id="banner.dental-examination" />
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li className="option-item">
+                                        <a className="option-item-link">
+                                            <div className="option-service">
+                                                <i className="fa fa-scissors"></i>
+                                            </div>
+                                            <p className="option-title">
+                                                <FormattedMessage id="banner.surgical-packet" />
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li className="option-item">
+                                        <a className="option-item-link">
+                                            <div className="option-service">
+                                                <i className="fa fa-truck"></i>
+                                            </div>
+                                            <p className="option-title">
+                                                <FormattedMessage id="banner.medical-product" />
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div className="option">
-                        <div className="option-container">
-                            <ul className="option-list">
-                                <li className="option-item">
-                                    <a className="option-item-link">
-                                        <div className="option-service">
-                                            <i className=" fas fa-hospital"> </i>
-                                        </div>
-                                        <p className="option-title">
-                                            <FormattedMessage id="banner.check-specialty" />
-                                        </p>
-                                    </a>
-                                </li>
-                                <li className="option-item">
-                                    <a className="option-item-link">
-                                        <div className="option-service">
-                                            <i className=" fas fa-mobile-alt"> </i>
-                                        </div>
-                                        <p className="option-title">
-                                            <FormattedMessage id="banner.remote-examination" />
-                                        </p>
-                                    </a>
-                                </li>
-                                <li className="option-item">
-                                    <a className="option-item-link">
-                                        <div className="option-service">
-                                            <i className=" fas fa-procedures"> </i>
-                                        </div>
-                                        <p className="option-title">
-                                            <FormattedMessage id="banner.general-examination" />
-                                        </p>
-                                    </a>
-                                </li>
-                                <li className="option-item">
-                                    <a className="option-item-link">
-                                        <div className="option-service">
-                                            <i className=" fas fa-flask"> </i>
-                                        </div>
-                                        <p className="option-title">
-                                            <FormattedMessage id="banner.medical-test" />
-                                        </p>
-                                    </a>
-                                </li>
-                                <li className="option-item">
-                                    <a className="option-item-link">
-                                        <div className="option-service">
-                                            <i className=" fas fa-user-md"> </i>
-                                        </div>
-                                        <p className="option-title">
-                                            <FormattedMessage id="banner.mental-health" />
-                                        </p>
-                                    </a>
-                                </li>
-                                <li className="option-item">
-                                    <a className="option-item-link">
-                                        <div className="option-service">
-                                            <i className=" fas fa-hospital"> </i>
-                                        </div>
-                                        <p className="option-title">
-                                            <FormattedMessage id="banner.dental-examination" />
-                                        </p>
-                                    </a>
-                                </li>
-                                <li className="option-item">
-                                    <a className="option-item-link">
-                                        <div className="option-service">
-                                            <i className="fa fa-scissors"></i>
-                                        </div>
-                                        <p className="option-title">
-                                            <FormattedMessage id="banner.surgical-packet" />
-                                        </p>
-                                    </a>
-                                </li>
-                                <li className="option-item">
-                                    <a className="option-item-link">
-                                        <div className="option-service">
-                                            <i className="fa fa-truck"></i>
-                                        </div>
-                                        <p className="option-title">
-                                            <FormattedMessage id="banner.medical-product" />
-                                        </p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                }
             </div>
         );
     }
