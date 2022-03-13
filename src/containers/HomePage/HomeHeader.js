@@ -4,11 +4,18 @@ import './HomeHeader.scss';
 import { FormattedMessage } from 'react-intl';
 import { LANGUAGES } from "../../utils";
 import { changeLanguageApp } from "../../store/actions";
+import { withRouter } from 'react-router';
 
 class HomeHeader extends Component {
 
     changeLanguage = (language) => {
         this.props.changeLanguageAppRedux(language)
+    }
+
+    returnToHome = () => {
+        if (this.props.history) {
+            this.props.history.push('/home');
+        }
     }
 
     render() {
@@ -21,7 +28,7 @@ class HomeHeader extends Component {
                             <button className="header-bars">
                                 <i className="fas fa-bars"></i>
                             </button>
-                            <div className="header-logo"></div>
+                            <div className="header-logo" onClick={() => this.returnToHome()}></div>
                         </div>
                         <ul className="list-options-content">
                             <li className="list-options-item" >
@@ -200,4 +207,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeHeader);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeHeader));
