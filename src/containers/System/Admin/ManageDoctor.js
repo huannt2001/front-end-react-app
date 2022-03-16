@@ -97,7 +97,6 @@ class ManageDoctor extends Component {
             })
         }
 
-        console.log('check doctor ', res);
     }
 
     handleSaveContentMarkDown = () => {
